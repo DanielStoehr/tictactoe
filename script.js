@@ -81,13 +81,20 @@ function checkForWin() {
   }
 
   if (winner) {
-    console.log("Winner:", winner);
-    gameOver = true;
-    setTimeout(function () {
-      document.getElementById("game-over-image").style = "";
-      document.getElementById("restart-btn").style = "";
-    }, 1000);
+    endGame();
   }
+
+  if (!winner && fields.length == 9 && !fields.includes(undefined)) {
+    endGame();
+  }
+}
+
+function endGame() {
+  gameOver = true;
+  setTimeout(function () {
+    document.getElementById("game-over-image").style = "";
+    document.getElementById("restart-btn").style = "";
+  }, 1000);
 }
 
 function resetLines() {
