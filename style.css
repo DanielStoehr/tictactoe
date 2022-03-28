@@ -93,3 +93,40 @@ tr td:last-child {
 .make-vertical {
   transform: rotate(90deg) scaleX(0);
 }
+
+#game-over-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  animation: zoom-in 225ms ease-in-out;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+#restart-btn {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  background-color: #ebdad3;
+  cursor: pointer;
+  width: 300px;
+  height: 100px;
+  font-size: 40px;
+  position: absolute;
+  transition: all 250ms ease-in-out;
+  top: 25%;
+}
+
+#restart-btn:hover {
+  background-color: black;
+  color: #ebdad3;
+}
